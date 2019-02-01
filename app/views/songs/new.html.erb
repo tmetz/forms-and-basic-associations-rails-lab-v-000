@@ -11,7 +11,7 @@
   <%= f.text_area :note_contents, :id => 'song_notes_1' %>
 
 
-  <%= f.collection_select :song, :genre, Genre.all, :name %>
+  <input name='song[note_contents][]' id='song_notes_1'>
 
   <%= f.submit %>
 <% end %>
