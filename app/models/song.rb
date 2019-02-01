@@ -24,7 +24,7 @@ class Song < ActiveRecord::Base
     self.notes << Note.find_or_create_by(content: content)
   end
 
-  def note_contents
-    self.notes ? self.note.contents : nil
-  end
+  # def note_contents
+  #   self.notes ? self.note.contents : nil
+  # end
 end
