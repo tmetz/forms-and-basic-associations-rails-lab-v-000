@@ -20,6 +20,8 @@ class Song < ActiveRecord::Base
     self.genre ? self.genre.name : nil
   end
 
+# .build creates objects without saving them -- we are saving in controller
+# basically the same as .new
   def note_contents=(notes)
     notes.each do |content|
       if content.strip != ''
@@ -31,6 +33,11 @@ class Song < ActiveRecord::Base
   def note_contents
     self.notes.map(&:content)
   end
+  # could be written:
+  # self.notes.map do |element|
+  #   element.content
+  # end
+  #
   # def note_contents
   #   self.notes ? self.note.contents : nil
   # end
